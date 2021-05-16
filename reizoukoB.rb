@@ -1,7 +1,10 @@
-
+#冷蔵庫モデルB
+#モデルAを継承
 require "./reizoko.rb"
 
 class ReizoukoB < ReizoukoA
+  #既存の機能を上書きする
+  #同盟のメソッドがあればオーバーライドされる
   
   def cool_down
     @temperature -= 3
