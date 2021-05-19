@@ -1,0 +1,48 @@
+module Greeting
+  def welcome
+    "いらっしゃいませ"
+  end
+end
+
+module WhippedCream
+  def whipped_cream
+    @name += "ホイップクリーム"
+  end
+end
+
+class Cafe
+  extend Greeting
+end
+
+class Drink
+  include WhippedCream
+  def initialize(name)
+   @name = name
+  end
+  def name
+    @name
+  end
+end
+
+class Cake
+  include WhippedCream
+  def initialize(name)
+    @name = name
+  end
+  def name
+    @name
+  end
+end
+
+puts Cafe.welcome
+
+drink = Drink.new("モカ")
+drink.whipped_cream
+puts drink.name
+
+cake = Cake.new("チョコレートケーキ")
+cake.whipped_cream
+puts cake.name
+
+
+
